@@ -1,5 +1,5 @@
 ---
-name: "bandera-aarch64-3.0"
+name: "bandera-aarch64-1.0.0.1"
 enable_cache: true
 suites:
 - "xenial"

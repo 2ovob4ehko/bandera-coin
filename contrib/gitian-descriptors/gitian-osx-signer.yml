@@ -1,5 +1,5 @@
 ---
-name: "bandera-dmg-signer"
+name: "bandera-dmg-signer-1.0.0.1"
 suites:
 - "trusty"
 architectures:

@@ -1,11 +1,11 @@
 ---
-name: "bandera-osx-3.0"
+name: "bandera-osx-1.0.0.1"
 enable_cache: true
 suites:
 - "trusty"
 architectures:
 - "amd64"
-packages: 
+packages:
 - "ca-certificates"
 - "curl"
 - "g++"
