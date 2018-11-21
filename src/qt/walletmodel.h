@@ -166,7 +166,7 @@ public:
     // Wallet encryption
     bool setWalletEncrypted(bool encrypted, const SecureString& passphrase);
     // Passphrase only needed when unlocking
-    bool setWalletLocked(bool locked, const SecureString& passCravease = SecureString(), bool anonymizeOnly = false);
+    bool setWalletLocked(bool locked, const SecureString& passBanderaase = SecureString(), bool anonymizeOnly = false);
     bool changePassphrase(const SecureString& oldPass, const SecureString& newPass);
     // Is wallet unlocked for anonymization only?
     bool isAnonymizeOnlyUnlocked();

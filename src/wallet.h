@@ -80,29 +80,29 @@ enum AvailableCoinsType {
     ALL_COINS = 1,
     ONLY_DENOMINATED = 2,
     ONLY_NOT10000IFMN = 3,
-    ONLY_NONDENOMINATED_NOT10000IFMN = 4, // ONLY_NONDENOMINATED and not 10000 CRAVE at the same time
+    ONLY_NONDENOMINATED_NOT10000IFMN = 4, // ONLY_NONDENOMINATED and not 10000 BANDERA at the same time
     ONLY_5000 = 5,                        // find masternode outputs including locked ones (use with caution)
     STAKABLE_COINS = 6                          // UTXO's that are valid for staking
 };
 
-// Possible states for zCRAVE send
+// Possible states for zBANDERA send
 enum ZerocoinSpendStatus {
-    ZCRAVE_SPEND_OKAY = 0,                            // No error
-    ZCRAVE_SPEND_ERROR = 1,                           // Unspecified class of errors, more details are (hopefully) in the returning text
-    ZCRAVE_WALLET_LOCKED = 2,                         // Wallet was locked
-    ZCRAVE_COMMIT_FAILED = 3,                         // Commit failed, reset status
-    ZCRAVE_ERASE_SPENDS_FAILED = 4,                   // Erasing spends during reset failed
-    ZCRAVE_ERASE_NEW_MINTS_FAILED = 5,                // Erasing new mints during reset failed
-    ZCRAVE_TRX_FUNDS_PROBLEMS = 6,                    // Everything related to available funds
-    ZCRAVE_TRX_CREATE = 7,                            // Everything related to create the transaction
-    ZCRAVE_TRX_CHANGE = 8,                            // Everything related to transaction change
-    ZCRAVE_TXMINT_GENERAL = 9,                        // General errors in MintToTxIn
-    ZCRAVE_INVALID_COIN = 10,                         // Selected mint coin is not valid
-    ZCRAVE_FAILED_ACCUMULATOR_INITIALIZATION = 11,    // Failed to initialize witness
-    ZCRAVE_INVALID_WITNESS = 12,                      // Spend coin transaction did not verify
-    ZCRAVE_BAD_SERIALIZATION = 13,                    // Transaction verification failed
-    ZCRAVE_SPENT_USED_ZCRAVE = 14,                     // Coin has already been spend
-    ZCRAVE_TX_TOO_LARGE = 15                          // The transaction is larger than the max tx size
+    ZBANDERA_SPEND_OKAY = 0,                            // No error
+    ZBANDERA_SPEND_ERROR = 1,                           // Unspecified class of errors, more details are (hopefully) in the returning text
+    ZBANDERA_WALLET_LOCKED = 2,                         // Wallet was locked
+    ZBANDERA_COMMIT_FAILED = 3,                         // Commit failed, reset status
+    ZBANDERA_ERASE_SPENDS_FAILED = 4,                   // Erasing spends during reset failed
+    ZBANDERA_ERASE_NEW_MINTS_FAILED = 5,                // Erasing new mints during reset failed
+    ZBANDERA_TRX_FUNDS_PROBLEMS = 6,                    // Everything related to available funds
+    ZBANDERA_TRX_CREATE = 7,                            // Everything related to create the transaction
+    ZBANDERA_TRX_CHANGE = 8,                            // Everything related to transaction change
+    ZBANDERA_TXMINT_GENERAL = 9,                        // General errors in MintToTxIn
+    ZBANDERA_INVALID_COIN = 10,                         // Selected mint coin is not valid
+    ZBANDERA_FAILED_ACCUMULATOR_INITIALIZATION = 11,    // Failed to initialize witness
+    ZBANDERA_INVALID_WITNESS = 12,                      // Spend coin transaction did not verify
+    ZBANDERA_BAD_SERIALIZATION = 13,                    // Transaction verification failed
+    ZBANDERA_SPENT_USED_ZBANDERA = 14,                     // Coin has already been spend
+    ZBANDERA_TX_TOO_LARGE = 15                          // The transaction is larger than the max tx size
 };
 
 struct CompactTallyItem {
@@ -207,7 +207,7 @@ public:
     std::string ResetMintZerocoin(bool fExtendedSearch);
     std::string ResetSpentZerocoin();
     void ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored);
-    void ZCraveBackupWallet();
+    void ZBanderaBackupWallet();
 
     /** Zerocin entry changed.
     * @note called with lock cs_wallet held.
@@ -310,7 +310,7 @@ public:
         return fEnableZeromint;
     }
 
-    void setZCraveAutoBackups(bool fEnabled)
+    void setZBanderaAutoBackups(bool fEnabled)
     {
         fBackupMints = fEnabled;
     }

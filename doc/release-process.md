@@ -3,7 +3,7 @@ Release Process
 
 Before every release candidate:
 
-* Update translations (ping Fuzzbawls on Slack) see [translation_process.md](https://github.com/CooleRRSA/crave-ng/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations (ping Fuzzbawls on Slack) see [translation_process.md](https://github.com/2ovob4ehko/bandera-coin/blob/master/doc/translation_process.md#synchronising-translations).
 
 Before every minor and major release:
 
@@ -24,12 +24,12 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/CooleRRSA/crave-ng-gitian.sigs.git
-    git clone https://github.com/CooleRRSA/crave-ng-detached-sigs.git
-    git clone https://github.com/CooleRRSA/crave-ng-gitian-builder.git
-    git clone https://github.com/CooleRRSA/crave-ng.git
+    git clone https://github.com/2ovob4ehko/bandera-coin-gitian.sigs.git
+    git clone https://github.com/2ovob4ehko/bandera-coin-detached-sigs.git
+    git clone https://github.com/2ovob4ehko/bandera-coin-gitian-builder.git
+    git clone https://github.com/2ovob4ehko/bandera-coin.git
 
-### Crave maintainers/release engineers, suggestion for writing release notes
+### Bandera maintainers/release engineers, suggestion for writing release notes
 
 Write release notes. git shortlog helps a lot, for example:
 
@@ -50,7 +50,7 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 
 Setup Gitian descriptors:
 
-    pushd ./crave
+    pushd ./bandera
     export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
     export VERSION=(new version, e.g. 0.8.0)
     git fetch
@@ -84,7 +84,7 @@ Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, a
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
     pushd ./gitian-builder
-    make -C ../crave/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../bandera/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -92,55 +92,55 @@ Only missing files will be fetched, so this is safe to re-run for each build.
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 
     pushd ./gitian-builder
-    ./bin/gbuild --url crave=/path/to/crave,signature=/path/to/sigs {rest of arguments}
+    ./bin/gbuild --url bandera=/path/to/bandera,signature=/path/to/sigs {rest of arguments}
     popd
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Crave for Linux, Windows, and OS X:
+### Build and sign Bandera for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
-    ./bin/gbuild --memory 3000 --commit crave=v${VERSION} ../crave/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../crave/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/crave-*.tar.gz build/out/src/crave-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit bandera=v${VERSION} ../bandera/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bandera/contrib/gitian-descriptors/gitian-linux.yml
+    mv build/out/bandera-*.tar.gz build/out/src/bandera-*.tar.gz ../
 
-    ./bin/gbuild --memory 3000 --commit crave=v${VERSION} ../crave/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../crave/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/crave-*-win-unsigned.tar.gz inputs/crave-win-unsigned.tar.gz
-    mv build/out/crave-*.zip build/out/crave-*.exe ../
+    ./bin/gbuild --memory 3000 --commit bandera=v${VERSION} ../bandera/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../bandera/contrib/gitian-descriptors/gitian-win.yml
+    mv build/out/bandera-*-win-unsigned.tar.gz inputs/bandera-win-unsigned.tar.gz
+    mv build/out/bandera-*.zip build/out/bandera-*.exe ../
 
-    ./bin/gbuild --memory 3000 --commit crave=v${VERSION} ../crave/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../crave/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/crave-*-osx-unsigned.tar.gz inputs/crave-osx-unsigned.tar.gz
-    mv build/out/crave-*.tar.gz build/out/crave-*.dmg ../
+    ./bin/gbuild --memory 3000 --commit bandera=v${VERSION} ../bandera/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../bandera/contrib/gitian-descriptors/gitian-osx.yml
+    mv build/out/bandera-*-osx-unsigned.tar.gz inputs/bandera-osx-unsigned.tar.gz
+    mv build/out/bandera-*.tar.gz build/out/bandera-*.dmg ../
 
-    ./bin/gbuild --memory 3000 --commit crave=v${VERSION} ../crave/contrib/gitian-descriptors/gitian-aarch64.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../crave/contrib/gitian-descriptors/gitian-aarch64.yml
-    mv build/out/crave-*.tar.gz build/out/src/crave-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit bandera=v${VERSION} ../bandera/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bandera/contrib/gitian-descriptors/gitian-aarch64.yml
+    mv build/out/bandera-*.tar.gz build/out/src/bandera-*.tar.gz ../
     popd
 
 Build output expected:
 
-  1. source tarball (`crave-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`crave-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`crave-${VERSION}-win[32|64]-setup-unsigned.exe`, `crave-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`crave-${VERSION}-osx-unsigned.dmg`, `crave-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`bandera-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`bandera-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`bandera-${VERSION}-win[32|64]-setup-unsigned.exe`, `bandera-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`bandera-${VERSION}-osx-unsigned.dmg`, `bandera-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
 Add other gitian builders keys to your gpg keyring, and/or refresh keys.
 
-    gpg --import crave/contrib/gitian-keys/*.pgp
+    gpg --import bandera/contrib/gitian-keys/*.pgp
     gpg --refresh-keys
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../crave/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../crave/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../crave/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../crave/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../bandera/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../bandera/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../bandera/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../bandera/contrib/gitian-descriptors/gitian-aarch64.yml
     popd
 
 ### Next steps:
@@ -162,22 +162,22 @@ Codesigner only: Create Windows/OS X detached signatures:
 
 Codesigner only: Sign the osx binary:
 
-    transfer crave-osx-unsigned.tar.gz to osx for signing
-    tar xf crave-osx-unsigned.tar.gz
+    transfer bandera-osx-unsigned.tar.gz to osx for signing
+    tar xf bandera-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf crave-win-unsigned.tar.gz
+    tar xf bandera-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
 
 Codesigner only: Commit the detached codesign payloads:
 
-    cd ~/crave-detached-sigs
+    cd ~/bandera-detached-sigs
     checkout the appropriate branch for this release series
     rm -rf *
     tar xf signature-osx.tar.gz
@@ -190,25 +190,25 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [crave-detached-sigs](https://github.com/CooleRRSA/crave-ng-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [bandera-detached-sigs](https://github.com/2ovob4ehko/bandera-coin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../crave/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../crave/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../crave/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/crave-osx-signed.dmg ../crave-${VERSION}-osx.dmg
+    ./bin/gbuild -i --commit signature=v${VERSION} ../bandera/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../bandera/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../bandera/contrib/gitian-descriptors/gitian-osx-signer.yml
+    mv build/out/bandera-osx-signed.dmg ../bandera-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../crave/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../crave/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../crave/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/crave-*win64-setup.exe ../crave-${VERSION}-win64-setup.exe
-    mv build/out/crave-*win32-setup.exe ../crave-${VERSION}-win32-setup.exe
+    ./bin/gbuild -i --commit signature=v${VERSION} ../bandera/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../bandera/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../bandera/contrib/gitian-descriptors/gitian-win-signer.yml
+    mv build/out/bandera-*win64-setup.exe ../bandera-${VERSION}-win64-setup.exe
+    mv build/out/bandera-*win32-setup.exe ../bandera-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -230,23 +230,23 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-crave-${VERSION}-aarch64-linux-gnu.tar.gz
-crave-${VERSION}-arm-linux-gnueabihf.tar.gz
-crave-${VERSION}-i686-pc-linux-gnu.tar.gz
-crave-${VERSION}-x86_64-linux-gnu.tar.gz
-crave-${VERSION}-osx64.tar.gz
-crave-${VERSION}-osx.dmg
-crave-${VERSION}.tar.gz
-crave-${VERSION}-win32-setup.exe
-crave-${VERSION}-win32.zip
-crave-${VERSION}-win64-setup.exe
-crave-${VERSION}-win64.zip
+bandera-${VERSION}-aarch64-linux-gnu.tar.gz
+bandera-${VERSION}-arm-linux-gnueabihf.tar.gz
+bandera-${VERSION}-i686-pc-linux-gnu.tar.gz
+bandera-${VERSION}-x86_64-linux-gnu.tar.gz
+bandera-${VERSION}-osx64.tar.gz
+bandera-${VERSION}-osx.dmg
+bandera-${VERSION}.tar.gz
+bandera-${VERSION}-win32-setup.exe
+bandera-${VERSION}-win32.zip
+bandera-${VERSION}-win64-setup.exe
+bandera-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
 in debugging can run gitian to generate the files for themselves. To avoid
 end-user confusion about which file to pick, as well as save storage
-space *do not upload these to the craveproject.net server*.
+space *do not upload these to the banderaproject.net server*.
 
 - GPG-sign it, delete the unsigned file:
 ```
@@ -262,10 +262,10 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
   - bitcointalk announcement thread
 
-  - Optionally twitter, reddit /r/crave, ... but this will usually sort out itself
+  - Optionally twitter, reddit /r/bandera, ... but this will usually sort out itself
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/CooleRRSA/crave-ng/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/2ovob4ehko/bandera-coin/releases/new) with a link to the archived release notes.
 
   - Celebrate

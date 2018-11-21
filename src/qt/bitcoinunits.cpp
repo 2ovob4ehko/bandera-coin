@@ -19,18 +19,18 @@ BitcoinUnits::BitcoinUnits(QObject* parent) : QAbstractListModel(parent),
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(CRAVE);
-    unitlist.append(mCRAVE);
-    unitlist.append(uCRAVE);
+    unitlist.append(BANDERA);
+    unitlist.append(mBANDERA);
+    unitlist.append(uBANDERA);
     return unitlist;
 }
 
 bool BitcoinUnits::valid(int unit)
 {
     switch (unit) {
-    case CRAVE:
-    case mCRAVE:
-    case uCRAVE:
+    case BANDERA:
+    case mBANDERA:
+    case uBANDERA:
         return true;
     default:
         return false;
@@ -40,12 +40,12 @@ bool BitcoinUnits::valid(int unit)
 QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
-    case CRAVE:
-        return QString("crave");
-    case mCRAVE:
-        return QString("mcrave");
-    case uCRAVE:
-        return QString::fromUtf8("ucrave");
+    case BANDERA:
+        return QString("bandera");
+    case mBANDERA:
+        return QString("mbandera");
+    case uBANDERA:
+        return QString::fromUtf8("ubandera");
     default:
         return QString("???");
     }
@@ -55,23 +55,23 @@ QString BitcoinUnits::name(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case CRAVE:
-            return QString("CRAVE");
-        case mCRAVE:
-            return QString("mCRAVE");
-        case uCRAVE:
-            return QString::fromUtf8("μCRAVE");
+        case BANDERA:
+            return QString("BANDERA");
+        case mBANDERA:
+            return QString("mBANDERA");
+        case uBANDERA:
+            return QString::fromUtf8("μBANDERA");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case CRAVE:
-            return QString("tCRAVE");
-        case mCRAVE:
-            return QString("mtCRAVE");
-        case uCRAVE:
-            return QString::fromUtf8("μtCRAVE");
+        case BANDERA:
+            return QString("tBANDERA");
+        case mBANDERA:
+            return QString("mtBANDERA");
+        case uBANDERA:
+            return QString::fromUtf8("μtBANDERA");
         default:
             return QString("???");
         }
@@ -82,23 +82,23 @@ QString BitcoinUnits::description(int unit)
 {
     if (Params().NetworkID() == CBaseChainParams::MAIN) {
         switch (unit) {
-        case CRAVE:
-            return QString("CRAVE");
-        case mCRAVE:
-            return QString("Milli-CRAVE (1 / 1" THIN_SP_UTF8 "000)");
-        case uCRAVE:
-            return QString("Micro-CRAVE (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case BANDERA:
+            return QString("BANDERA");
+        case mBANDERA:
+            return QString("Milli-BANDERA (1 / 1" THIN_SP_UTF8 "000)");
+        case uBANDERA:
+            return QString("Micro-BANDERA (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
     } else {
         switch (unit) {
-        case CRAVE:
-            return QString("TestCRAVEs");
-        case mCRAVE:
-            return QString("Milli-TestCRAVE (1 / 1" THIN_SP_UTF8 "000)");
-        case uCRAVE:
-            return QString("Micro-TestCRAVE (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+        case BANDERA:
+            return QString("TestBANDERAs");
+        case mBANDERA:
+            return QString("Milli-TestBANDERA (1 / 1" THIN_SP_UTF8 "000)");
+        case uBANDERA:
+            return QString("Micro-TestBANDERA (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
         default:
             return QString("???");
         }
@@ -108,11 +108,11 @@ QString BitcoinUnits::description(int unit)
 qint64 BitcoinUnits::factor(int unit)
 {
     switch (unit) {
-    case CRAVE:
+    case BANDERA:
         return 100000000;
-    case mCRAVE:
+    case mBANDERA:
         return 100000;
-    case uCRAVE:
+    case uBANDERA:
         return 100;
     default:
         return 100000000;
@@ -122,11 +122,11 @@ qint64 BitcoinUnits::factor(int unit)
 int BitcoinUnits::decimals(int unit)
 {
     switch (unit) {
-    case CRAVE:
+    case BANDERA:
         return 8;
-    case mCRAVE:
+    case mBANDERA:
         return 5;
-    case uCRAVE:
+    case uBANDERA:
         return 2;
     default:
         return 0;

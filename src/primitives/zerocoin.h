@@ -1,8 +1,8 @@
 // Copyright (c) 2017 The PIVX developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef CRAVE_ZEROCOIN_H
-#define CRAVE_ZEROCOIN_H
+#ifndef BANDERA_ZEROCOIN_H
+#define BANDERA_ZEROCOIN_H
 
 #include <amount.h>
 #include <limits.h>
@@ -189,4 +189,4 @@ public:
     int GetNeededSpends();
 };
 
-#endif //CRAVE_ZEROCOIN_H
+#endif //BANDERA_ZEROCOIN_H

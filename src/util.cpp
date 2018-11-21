@@ -6,7 +6,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/crave-config.h"
+#include "config/bandera-config.h"
 #endif
 
 #include "util.h"
@@ -105,7 +105,7 @@ std::string to_internal(const std::string&);
 
 using namespace std;
 
-// Crave only features
+// Bandera only features
 // Masternode
 bool fMasterNode = false;
 string strMasterNodePrivKey = "";
@@ -120,7 +120,7 @@ int nZeromintPercentage = 10;
 int nPreferredDenom = 0;
 const int64_t AUTOMINT_DELAY = (60 * 5); // Wait at least 5 minutes until Automint starts
 
-int nAnonymizeCraveAmount = 1000;
+int nAnonymizeBanderaAmount = 1000;
 int nLiquidityProvider = 0;
 /** Spork enforcement enabled time */
 int64_t enforceMasternodePaymentsTime = 4085657524;
@@ -237,8 +237,8 @@ bool LogAcceptCategory(const char* category)
             const vector<string>& categories = mapMultiArgs["-debug"];
             ptrCategory.reset(new set<string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
-            // "crave" is a composite category enabling all Crave-related debug output
-            if (ptrCategory->count(string("crave"))) {
+            // "bandera" is a composite category enabling all Bandera-related debug output
+            if (ptrCategory->count(string("bandera"))) {
                 ptrCategory->insert(string("obfuscation"));
                 ptrCategory->insert(string("lightx"));
                 ptrCategory->insert(string("masternode"));
@@ -403,7 +403,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "crave";
+    const char* pszModule = "bandera";
 #endif
     if (pex)
         return strprintf(
@@ -424,13 +424,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-// Windows < Vista: C:\Documents and Settings\Username\Application Data\CraveNG
-// Windows >= Vista: C:\Users\Username\AppData\Roaming\CraveNG
-// Mac: ~/Library/Application Support/CraveNG
-// Unix: ~/.crave
+// Windows < Vista: C:\Documents and Settings\Username\Application Data\BanderaNG
+// Windows >= Vista: C:\Users\Username\AppData\Roaming\BanderaNG
+// Mac: ~/Library/Application Support/BanderaNG
+// Unix: ~/.bandera
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "CraveNG";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "BanderaNG";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -442,10 +442,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "CraveNG";
+    return pathRet / "BanderaNG";
 #else
     // Unix
-    return pathRet / ".craveng";
+    return pathRet / ".banderang";
 #endif
 #endif
 }
@@ -492,7 +492,7 @@ void ClearDatadirCache()
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "crave.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "bandera.conf"));
     if (!pathConfigFile.is_complete())
         pathConfigFile = GetDataDir(false) / pathConfigFile;
 
@@ -511,7 +511,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good()) {
-        // Create empty crave.conf if it does not exist
+        // Create empty bandera.conf if it does not exist
         FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
         if (configFile != NULL)
             fclose(configFile);
@@ -522,7 +522,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
     setOptions.insert("*");
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it) {
-        // Don't overwrite existing settings so command line settings override crave.conf
+        // Don't overwrite existing settings so command line settings override bandera.conf
         string strKey = string("-") + it->string_key;
         string strValue = it->value[0];
         InterpretNegativeSetting(strKey, strValue);
@@ -537,7 +537,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 #ifndef WIN32
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "craved.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "banderad.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }

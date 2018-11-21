@@ -46,7 +46,7 @@ public:
 
     void setModel(WalletModel* model);
     void showOutOfSyncWarning(bool fShow);
-    void setZCraveControlLabels(int64_t nAmount, int nQuantity);
+    void setZBanderaControlLabels(int64_t nAmount, int nQuantity);
 
 public slots:
     void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, 
@@ -76,7 +76,7 @@ private:
 
     int nDisplayUnit;
     bool updateLabel(const QString& address);
-    void sendzCRAVE();
+    void sendzBANDERA();
 
 private slots:
     void on_payTo_textChanged(const QString& address);
@@ -96,11 +96,11 @@ private slots:
 //    void coinControlClipboardLowOutput();
 //    void coinControlClipboardChange();
 
-    void on_pushButtonMintzCRAVE_clicked();
+    void on_pushButtonMintzBANDERA_clicked();
     void on_pushButtonMintReset_clicked();
     void on_pushButtonSpentReset_clicked();
-    void on_pushButtonSpendzCRAVE_clicked();
-    void on_pushButtonZCraveControl_clicked();
+    void on_pushButtonSpendzBANDERA_clicked();
+    void on_pushButtonZBanderaControl_clicked();
     void on_pasteButton_clicked();
     void updateDisplayUnit();
 };

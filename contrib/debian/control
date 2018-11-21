@@ -1,4 +1,4 @@
-Source: crave
+Source: bandera
 Section: utils
 Priority: optional
 Maintainer: Jonas Smedegaard <dr@jones.dk> ***TODO***
@@ -22,15 +22,15 @@ Build-Depends: debhelper,
  libqrencode-dev,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
-Homepage: http://craveproject.net
-Vcs-Git: git://github.com/CooleRRSA/crave-ng.git
-Vcs-Browser: http://github.com/CooleRRSA/crave-ng
+Homepage: http://banderaproject.net
+Vcs-Git: git://github.com/2ovob4ehko/bandera-coin.git
+Vcs-Browser: http://github.com/2ovob4ehko/bandera-coin
 
-Package: craved
+Package: banderad
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Crave is a free open source peer-to-peer electronic cash system that
+ Bandera is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
@@ -39,14 +39,14 @@ Description: peer-to-peer network based digital currency - daemon
  Full transaction history is stored locally at each client.  This
  requires 1+ GB of space, slowly growing.
  .
- This package provides the daemon, craved, and the CLI tool
- crave-cli to interact with the daemon.
+ This package provides the daemon, banderad, and the CLI tool
+ bandera-cli to interact with the daemon.
 
-Package: crave-qt
+Package: bandera-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Crave is a free open source peer-to-peer electronic cash system that
+ Bandera is a free open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
@@ -55,4 +55,4 @@ Description: peer-to-peer network based digital currency - Qt GUI
  Full transaction history is stored locally at each client.  This
  requires 1+ GB of space, slowly growing.
  .
- This package provides Crave-Qt, a GUI for Crave based on Qt.
+ This package provides Bandera-Qt, a GUI for Bandera based on Qt.

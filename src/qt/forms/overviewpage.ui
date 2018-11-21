@@ -66,7 +66,7 @@
                </font>
               </property>
               <property name="text">
-               <string>CRAVE Balances</string>
+               <string>BANDERA Balances</string>
               </property>
              </widget>
             </item>
@@ -76,7 +76,7 @@
                <cursorShape>WhatsThisCursor</cursorShape>
               </property>
               <property name="toolTip">
-               <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Crave network after a connection is established, but this process has not completed yet.</string>
+               <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Bandera network after a connection is established, but this process has not completed yet.</string>
               </property>
               <property name="styleSheet">
                <string notr="true">QLabel { color: red; }</string>
@@ -130,7 +130,7 @@
                <string>Unconfirmed transactions to watch-only addresses</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CRAVE</string>
+               <string notr="true">0.000 000 00 BANDERA</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -155,7 +155,7 @@
                <string>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CRAVE</string>
+               <string notr="true">0.000 000 00 BANDERA</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -180,7 +180,7 @@
                <string>Staked or masternode rewards in watch-only addresses that has not yet matured</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CRAVE</string>
+               <string notr="true">0.000 000 00 BANDERA</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -256,7 +256,7 @@
                <string>Staked or masternode rewards that has not yet matured</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CRAVE</string>
+               <string notr="true">0.000 000 00 BANDERA</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -307,7 +307,7 @@
                <string>Your current total balance</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CRAVE</string>
+               <string notr="true">0.000 000 00 BANDERA</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -332,7 +332,7 @@
                <string>Current total balance in watch-only addresses</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CRAVE</string>
+               <string notr="true">0.000 000 00 BANDERA</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -392,7 +392,7 @@
                <string>Your current spendable balance</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CRAVE</string>
+               <string notr="true">0.000 000 00 BANDERA</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -417,7 +417,7 @@
                <string>Your current balance in watch-only addresses</string>
               </property>
               <property name="text">
-               <string notr="true">0.000 000 00 CRAVE</string>
+               <string notr="true">0.000 000 00 BANDERA</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1012,7 +1012,7 @@
                 <string>Total of transactions that have yet to be confirmed, and do not yet count toward the spendable balance</string>
                </property>
                <property name="text">
-                <string notr="true">0.000 000 00 CRAVE</string>
+                <string notr="true">0.000 000 00 BANDERA</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1037,7 +1037,7 @@
                 <string>Total Balance, including unconfirmed and immature coins.</string>
                </property>
                <property name="text">
-                <string notr="true">0.000 000 00 CRAVE</string>
+                <string notr="true">0.000 000 00 BANDERA</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1070,7 +1070,7 @@
              <item row="1" column="0">
               <widget class="QLabel" name="labelBalanceTextz">
                <property name="text">
-                <string>CRAVE:</string>
+                <string>BANDERA:</string>
                </property>
               </widget>
              </item>
@@ -1089,7 +1089,7 @@
                 <string>Your current spendable balance</string>
                </property>
                <property name="text">
-                <string notr="true">0.000 000 00 CRAVE</string>
+                <string notr="true">0.000 000 00 BANDERA</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1105,14 +1105,14 @@
                 <string/>
                </property>
                <property name="text">
-                <string>zCRAVE:</string>
+                <string>zBANDERA:</string>
                </property>
               </widget>
              </item>
              <item row="4" column="2">
-              <widget class="QLabel" name="labelzCRAVEPercent">
+              <widget class="QLabel" name="labelzBANDERAPercent">
                <property name="toolTip">
-                <string>Current percentage of zCRAVE.
+                <string>Current percentage of zBANDERA.
 If AutoMint is enabled this percentage will settle around the configured AutoMint percentage (default = 10%)</string>
                </property>
                <property name="text">
@@ -1136,10 +1136,10 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
              <item row="2" column="1">
               <widget class="QLabel" name="labelLockedBalance">
                <property name="toolTip">
-                <string>Locked CRAVE or Masternode collaterals. These are excluded from zCRAVE minting.</string>
+                <string>Locked BANDERA or Masternode collaterals. These are excluded from zBANDERA minting.</string>
                </property>
                <property name="text">
-                <string>0.000 000 00 CRAVE</string>
+                <string>0.000 000 00 BANDERA</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1149,7 +1149,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
              <item row="2" column="0">
               <widget class="QLabel" name="labelLockedBalanceText">
                <property name="toolTip">
-                <string>Locked CRAVE or Masternode collaterals. These are excluded from zCRAVE minting.</string>
+                <string>Locked BANDERA or Masternode collaterals. These are excluded from zBANDERA minting.</string>
                </property>
                <property name="text">
                 <string>Locked:</string>
@@ -1159,7 +1159,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
              <item row="3" column="0">
               <widget class="QLabel" name="labelUnLockedBalanceText">
                <property name="toolTip">
-                <string>Unlocked CRAVEs. These can be used for zCRAVE minting.</string>
+                <string>Unlocked BANDERAs. These can be used for zBANDERA minting.</string>
                </property>
                <property name="text">
                 <string>Unlocked:</string>
@@ -1169,10 +1169,10 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
              <item row="3" column="1">
               <widget class="QLabel" name="labelUnLockedBalance">
                <property name="toolTip">
-                <string>Unlocked CRAVEs. These can be used for zCRAVE minting.</string>
+                <string>Unlocked BANDERAs. These can be used for zBANDERA minting.</string>
                </property>
                <property name="text">
-                <string>0.000 000 00 CRAVE</string>
+                <string>0.000 000 00 BANDERA</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1180,7 +1180,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
               </widget>
              </item>
              <item row="3" column="2">
-              <widget class="QLabel" name="labelCRAVEPercent">
+              <widget class="QLabel" name="labelBANDERAPercent">
                <property name="text">
                 <string>0 %</string>
                </property>
@@ -1270,7 +1270,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
               <widget class="QLabel" name="labelzBalanceMatureText">
                <property name="toolTip">
                 <string>Mature: more than 20 confirmation and more than 3 mints of the same denomination after it was minted.
-These zCRAVE are spendable.</string>
+These zBANDERA are spendable.</string>
                </property>
                <property name="text">
                 <string>Mature:</string>
@@ -1296,10 +1296,10 @@ These zCRAVE are spendable.</string>
                 <cursorShape>IBeamCursor</cursorShape>
                </property>
                <property name="toolTip">
-                <string>All available zCRAVE, unconfirmed and immature zCRAVE included.</string>
+                <string>All available zBANDERA, unconfirmed and immature zBANDERA included.</string>
                </property>
                <property name="text">
-                <string notr="true">0.000 000 00 CRAVE</string>
+                <string notr="true">0.000 000 00 BANDERA</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1331,7 +1331,7 @@ These zCRAVE are spendable.</string>
              <item row="1" column="0">
               <widget class="QLabel" name="labelzBalanceText">
                <property name="toolTip">
-                <string>All available zCRAVE, unconfirmed and immature zCRAVE included.</string>
+                <string>All available zBANDERA, unconfirmed and immature zBANDERA included.</string>
                </property>
                <property name="text">
                 <string>Total:</string>
@@ -1374,10 +1374,10 @@ These zCRAVE are spendable.</string>
                </property>
                <property name="toolTip">
                 <string>Mature: more than 20 confirmation and more than 3 mints of the same denomination after it was minted.
-These zCRAVE are spendable.</string>
+These zBANDERA are spendable.</string>
                </property>
                <property name="text">
-                <string>0.000 000 00 CRAVE</string>
+                <string>0.000 000 00 BANDERA</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1408,7 +1408,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
 Immature: confirmed, but less than 3 mints of the same denomination after it was minted</string>
                </property>
                <property name="text">
-                <string>0.000 000 00 CRAVE</string>
+                <string>0.000 000 00 BANDERA</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1452,7 +1452,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
 Immature: confirmed, but less than 3 mints of the same denomination after it was minted</string>
                </property>
                <property name="text">
-                <string>0.000 000 00 CRAVE</string>
+                <string>0.000 000 00 BANDERA</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1512,7 +1512,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
                <cursorShape>WhatsThisCursor</cursorShape>
               </property>
               <property name="toolTip">
-               <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Crave network after a connection is established, but this process has not completed yet.</string>
+               <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Bandera network after a connection is established, but this process has not completed yet.</string>
               </property>
               <property name="styleSheet">
                <string notr="true">QLabel { color: red; }</string>
@@ -1593,7 +1593,7 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
           </size>
          </property>
          <property name="pixmap">
-          <pixmap>:/images/crave_logo_horizontal</pixmap>
+          <pixmap>:/images/bandera_logo_horizontal</pixmap>
          </property>
         </widget>
        </item>

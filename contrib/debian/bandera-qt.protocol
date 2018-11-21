@@ -1,0 +1,11 @@
+[Protocol]
+exec=bandera-qt '%u'
+protocol=bandera
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

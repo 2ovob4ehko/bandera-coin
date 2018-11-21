@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ZCRAVECONTROLDIALOG_H
-#define ZCRAVECONTROLDIALOG_H
+#ifndef ZBANDERACONTROLDIALOG_H
+#define ZBANDERACONTROLDIALOG_H
 
 #include <QDialog>
 #include <QTreeWidgetItem>
@@ -14,16 +14,16 @@ class CZerocoinMint;
 class WalletModel;
 
 namespace Ui {
-class ZCraveControlDialog;
+class ZBanderaControlDialog;
 }
 
-class ZCraveControlDialog : public QDialog
+class ZBanderaControlDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit ZCraveControlDialog(QWidget *parent);
-    ~ZCraveControlDialog();
+    explicit ZBanderaControlDialog(QWidget *parent);
+    ~ZBanderaControlDialog();
 
     void setModel(WalletModel* model);
 
@@ -32,7 +32,7 @@ public:
     static std::vector<CZerocoinMint> GetSelectedMints();
 
 private:
-    Ui::ZCraveControlDialog *ui;
+    Ui::ZBanderaControlDialog *ui;
     WalletModel* model;
     PrivacyDialog* privacyDialog;
 
@@ -52,4 +52,4 @@ private slots:
     void ButtonAllClicked();
 };
 
-#endif // ZCRAVECONTROLDIALOG_H
+#endif // ZBANDERACONTROLDIALOG_H

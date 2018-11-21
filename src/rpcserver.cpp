@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2018 The Crave developers
+// Copyright (c) 2017-2018 The Bandera developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -238,10 +238,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Crave server.");
+            "\nStop Bandera server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Crave server stopping";
+    return "Bandera server stopping";
 }
 
 
@@ -320,36 +320,36 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* Crave features */
-        {"crave", "masternode", &masternode, true, true, false},
-        {"crave", "listmasternodes", &listmasternodes, true, true, false},
-        {"crave", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"crave", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"crave", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"crave", "masternodedebug", &masternodedebug, true, true, false},
-        {"crave", "startmasternode", &startmasternode, true, true, false},
-        {"crave", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"crave", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"crave", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"crave", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"crave", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"crave", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"crave", "mnbudget", &mnbudget, true, true, false},
-        {"crave", "preparebudget", &preparebudget, true, true, false},
-        {"crave", "submitbudget", &submitbudget, true, true, false},
-        {"crave", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"crave", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"crave", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"crave", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"crave", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"crave", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"crave", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"crave", "checkbudgets", &checkbudgets, true, true, false},
-        {"crave", "mnsync", &mnsync, true, true, false},
-        {"crave", "spork", &spork, true, true, false},
-        {"crave", "getpoolinfo", &getpoolinfo, true, true, false},
+        /* Bandera features */
+        {"bandera", "masternode", &masternode, true, true, false},
+        {"bandera", "listmasternodes", &listmasternodes, true, true, false},
+        {"bandera", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"bandera", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"bandera", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"bandera", "masternodedebug", &masternodedebug, true, true, false},
+        {"bandera", "startmasternode", &startmasternode, true, true, false},
+        {"bandera", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"bandera", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"bandera", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"bandera", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"bandera", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"bandera", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"bandera", "mnbudget", &mnbudget, true, true, false},
+        {"bandera", "preparebudget", &preparebudget, true, true, false},
+        {"bandera", "submitbudget", &submitbudget, true, true, false},
+        {"bandera", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"bandera", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"bandera", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"bandera", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"bandera", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"bandera", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"bandera", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"bandera", "checkbudgets", &checkbudgets, true, true, false},
+        {"bandera", "mnsync", &mnsync, true, true, false},
+        {"bandera", "spork", &spork, true, true, false},
+        {"bandera", "getpoolinfo", &getpoolinfo, true, true, false},
 #ifdef ENABLE_WALLET
-        {"crave", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
+        {"bandera", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
 
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
@@ -629,16 +629,16 @@ void StartRPCThreads()
         unsigned char rand_pwd[32];
         GetRandBytes(rand_pwd, 32);
         uiInterface.ThreadSafeMessageBox(strprintf(
-                                             _("To use craved, or the -server option to crave-qt, you must set an rpcpassword in the configuration file:\n"
+                                             _("To use banderad, or the -server option to bandera-qt, you must set an rpcpassword in the configuration file:\n"
                                                "%s\n"
                                                "It is recommended you use the following random password:\n"
-                                               "rpcuser=craverpc\n"
+                                               "rpcuser=banderarpc\n"
                                                "rpcpassword=%s\n"
                                                "(you do not need to remember this password)\n"
                                                "The username and password MUST NOT be the same.\n"
                                                "If the file does not exist, create it with owner-readable-only file permissions.\n"
                                                "It is also recommended to set alertnotify so you are notified of problems;\n"
-                                               "for example: alertnotify=echo %%s | mail -s \"Crave Alert\" admin@foo.com\n"),
+                                               "for example: alertnotify=echo %%s | mail -s \"Bandera Alert\" admin@foo.com\n"),
                                              GetConfigFile().string(),
                                              EncodeBase58(&rand_pwd[0], &rand_pwd[0] + 32)),
             "", CClientUIInterface::MSG_ERROR | CClientUIInterface::SECURE);
@@ -1089,7 +1089,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> crave-cli " + methodname + " " + args + "\n";
+    return "> bandera-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)

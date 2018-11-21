@@ -1,11 +1,11 @@
-Crave integration/staging repository
+Bandera integration/staging repository
 =====================================
 
-Crave is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
+Bandera is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
 - Anonymized transactions using coin mixing technology, we call it _Obfuscation_.
 - Fast transactions featuring guaranteed zero confirmation transactions, we call it _LightX_.
 - Masternode technology used to secure the network and provide the above features, each Masternode is secured
-  with collateral of 5K CRAVE
+  with collateral of 5K BANDERA
 
 ## BCT Thread ##
 

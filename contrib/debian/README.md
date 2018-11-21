@@ -1,21 +1,21 @@
 
 Debian
 ====================
-This directory contains files used to package craved/crave-qt
-for Debian-based Linux systems. If you compile craved/crave-qt yourself, there are some useful files here.
+This directory contains files used to package banderad/bandera-qt
+for Debian-based Linux systems. If you compile banderad/bandera-qt yourself, there are some useful files here.
 
-## crave: URI support ##
+## bandera: URI support ##
 
 
-crave-qt.desktop  (Gnome / Open Desktop)
+bandera-qt.desktop  (Gnome / Open Desktop)
 To install:
 
-	sudo desktop-file-install crave-qt.desktop
+	sudo desktop-file-install bandera-qt.desktop
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
-the .desktop file or copy or symlink your craveqt binary to `/usr/bin`
-and the `../../share/pixmaps/crave128.png` to `/usr/share/pixmaps`
+the .desktop file or copy or symlink your banderaqt binary to `/usr/bin`
+and the `../../share/pixmaps/bandera128.png` to `/usr/share/pixmaps`
 
-crave-qt.protocol (KDE)
+bandera-qt.protocol (KDE)
 

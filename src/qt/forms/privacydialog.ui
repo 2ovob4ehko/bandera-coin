@@ -54,7 +54,7 @@
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_3">
                <item>
-                <widget class="QLabel" name="labelzCRAVEActions">
+                <widget class="QLabel" name="labelzBANDERAActions">
                  <property name="font">
                   <font>
                    <pointsize>12</pointsize>
@@ -71,9 +71,9 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelzCRAVESyncStatus">
+                <widget class="QLabel" name="labelzBANDERASyncStatus">
                  <property name="toolTip">
-                  <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Crave network after a connection is established, but this process has not completed yet.</string>
+                  <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Bandera network after a connection is established, but this process has not completed yet.</string>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">QLabel { color: red; }</string>
@@ -104,7 +104,7 @@
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_4">
                <item>
-                <widget class="QPushButton" name="pushButtonMintzCRAVE">
+                <widget class="QPushButton" name="pushButtonMintzBANDERA">
                  <property name="minimumSize">
                   <size>
                    <width>131</width>
@@ -112,7 +112,7 @@
                   </size>
                  </property>
                  <property name="toolTip">
-                  <string>Enter an amount of Crave to convert to zCRAVE</string>
+                  <string>Enter an amount of Bandera to convert to zBANDERA</string>
                  </property>
                  <property name="text">
                   <string>Mint Zerocoin</string>
@@ -136,9 +136,9 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelzCRAVE_2">
+                <widget class="QLabel" name="labelzBANDERA_2">
                  <property name="text">
-                  <string>zCRAVE</string>
+                  <string>zBANDERA</string>
                  </property>
                 </widget>
                </item>
@@ -156,7 +156,7 @@
                 </spacer>
                </item>
                <item>
-                <widget class="QLabel" name="labelzCRAVEAmountText">
+                <widget class="QLabel" name="labelzBANDERAAmountText">
                  <property name="toolTip">
                   <string>Available for minting are coins which are confirmed and not locked or Masternode collaterals.</string>
                  </property>
@@ -169,12 +169,12 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelzCRAVEAmountValue">
+                <widget class="QLabel" name="labelzBANDERAAmountValue">
                  <property name="toolTip">
-                  <string>Enter an amount of Crave to convert to zCRAVE</string>
+                  <string>Enter an amount of Bandera to convert to zBANDERA</string>
                  </property>
                  <property name="text">
-                  <string>0.000 000 00 CRAVE</string>
+                  <string>0.000 000 00 BANDERA</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -337,7 +337,7 @@
                     <enum>Qt::ActionsContextMenu</enum>
                    </property>
                    <property name="text">
-                    <string notr="true">0.00 CRAVE</string>
+                    <string notr="true">0.00 BANDERA</string>
                    </property>
                    <property name="textInteractionFlags">
                     <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -434,21 +434,21 @@
                 <number>0</number>
                </property>
                <item>
-                <widget class="QPushButton" name="pushButtonZCraveControl">
+                <widget class="QPushButton" name="pushButtonZBanderaControl">
                  <property name="text">
-                  <string>zCRAVE Control</string>
+                  <string>zBANDERA Control</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelzCRAVESelected">
+                <widget class="QLabel" name="labelzBANDERASelected">
                  <property name="text">
-                  <string>zCRAVE Selected:</string>
+                  <string>zBANDERA Selected:</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelzCRAVESelected_int">
+                <widget class="QLabel" name="labelzBANDERASelected_int">
                  <property name="text">
                   <string>0</string>
                  </property>
@@ -502,7 +502,7 @@
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_6">
                <item>
-                <widget class="QPushButton" name="pushButtonSpendzCRAVE">
+                <widget class="QPushButton" name="pushButtonSpendzBANDERA">
                  <property name="minimumSize">
                   <size>
                    <width>131</width>
@@ -518,9 +518,9 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="labelzCRAVEBalanceText">
+                <widget class="QLabel" name="labelzBANDERABalanceText">
                  <property name="toolTip">
-                  <string>Available (mature and spendable) zCRAVE for spending</string>
+                  <string>Available (mature and spendable) zBANDERA for spending</string>
                  </property>
                  <property name="text">
                   <string>Available Balance:</string>
@@ -539,12 +539,12 @@
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>Available (mature and spendable) zCRAVE for spending
+                  <string>Available (mature and spendable) zBANDERA for spending
 
-zCRAVE are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</string>
+zBANDERA are mature when they have more than 20 confirmations AND more than 2 mints of the same denomination after them were minted</string>
                  </property>
                  <property name="text">
-                  <string>0 zCRAVE</string>
+                  <string>0 zBANDERA</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -655,7 +655,7 @@ zCRAVE are mature when they have more than 20 confirmations AND more than 2 mint
                     </size>
                    </property>
                    <property name="toolTip">
-                    <string>The Crave address to send the payment to. Creates local payment to yourself when empty.</string>
+                    <string>The Bandera address to send the payment to. Creates local payment to yourself when empty.</string>
                    </property>
                   </widget>
                  </item>
@@ -668,7 +668,7 @@ zCRAVE are mature when they have more than 20 confirmations AND more than 2 mint
                     <string/>
                    </property>
                    <property name="icon">
-                    <iconset resource="../crave.qrc">
+                    <iconset resource="../bandera.qrc">
                      <normaloff>:/icons/address-book</normaloff>:/icons/address-book</iconset>
                    </property>
                    <property name="shortcut">
@@ -685,7 +685,7 @@ zCRAVE are mature when they have more than 20 confirmations AND more than 2 mint
                     <string/>
                    </property>
                    <property name="icon">
-                    <iconset resource="../crave.qrc">
+                    <iconset resource="../bandera.qrc">
                      <normaloff>:/icons/editpaste</normaloff>:/icons/editpaste</iconset>
                    </property>
                    <property name="shortcut">
@@ -744,15 +744,15 @@ zCRAVE are mature when they have more than 20 confirmations AND more than 2 mint
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
                  <property name="buddy">
-                  <cstring>zCRAVEpayAmount</cstring>
+                  <cstring>zBANDERApayAmount</cstring>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="zCRAVEpayAmount"/>
+                <widget class="QLineEdit" name="zBANDERApayAmount"/>
                </item>
                <item>
-                <widget class="QLabel" name="labelzCRAVE">
+                <widget class="QLabel" name="labelzBANDERA">
                  <property name="minimumSize">
                   <size>
                    <width>55</width>
@@ -760,7 +760,7 @@ zCRAVE are mature when they have more than 20 confirmations AND more than 2 mint
                   </size>
                  </property>
                  <property name="text">
-                  <string>zCRAVE</string>
+                  <string>zBANDERA</string>
                  </property>
                 </widget>
                </item>
@@ -853,7 +853,7 @@ zCRAVE are mature when they have more than 20 confirmations AND more than 2 mint
               <number>4</number>
              </property>
              <item>
-              <widget class="QLabel" name="labelzCRAVEStats">
+              <widget class="QLabel" name="labelzBANDERAStats">
                <property name="font">
                 <font>
                  <pointsize>12</pointsize>
@@ -898,7 +898,7 @@ zCRAVE are mature when they have more than 20 confirmations AND more than 2 mint
                 </font>
                </property>
                <property name="toolTip">
-                <string>Total Balance including unconfirmed and immature zCRAVE</string>
+                <string>Total Balance including unconfirmed and immature zBANDERA</string>
                </property>
                <property name="text">
                 <string>Total Zerocoin  Balance:</string>
@@ -936,10 +936,10 @@ zCRAVE are mature when they have more than 20 confirmations AND more than 2 mint
                 </font>
                </property>
                <property name="toolTip">
-                <string>Total Balance including unconfirmed and immature zCRAVE</string>
+                <string>Total Balance including unconfirmed and immature zBANDERA</string>
                </property>
                <property name="text">
-                <string>0 zCRAVE</string>
+                <string>0 zBANDERA</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1392,7 +1392,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../crave.qrc">:/images/privacylogo</pixmap>
+            <pixmap resource="../bandera.qrc">:/images/privacylogo</pixmap>
            </property>
           </widget>
          </item>
@@ -1476,7 +1476,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000 000 00 CRAVE</string>
+         <string notr="true">0.000 000 00 BANDERA</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -1550,7 +1550,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
            <enum>Qt::ActionsContextMenu</enum>
           </property>
           <property name="text">
-           <string notr="true">0.00 CRAVE</string>
+           <string notr="true">0.00 BANDERA</string>
           </property>
           <property name="textInteractionFlags">
            <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -1747,7 +1747,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
          <enum>Qt::ActionsContextMenu</enum>
         </property>
         <property name="text">
-         <string notr="true">0.000 000 00 CRAVE</string>
+         <string notr="true">0.000 000 00 BANDERA</string>
         </property>
         <property name="textInteractionFlags">
          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -2130,7 +2130,7 @@ Immature: confirmed, but less than 2 mints of the same denomination after it was
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../crave.qrc"/>
+  <include location="../bandera.qrc"/>
  </resources>
  <connections/>
 </ui>

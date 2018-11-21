@@ -96,7 +96,7 @@ public:
 };
 
 /**
- * Crave RPC command dispatcher.
+ * Bandera RPC command dispatcher.
  */
 class CRPCTable
 {

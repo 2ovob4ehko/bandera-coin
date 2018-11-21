@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef CRAVE_CSPORKDB_H
-#define CRAVE_CSPORKDB_H
+#ifndef BANDERA_CSPORKDB_H
+#define BANDERA_CSPORKDB_H
 
 #include <boost/filesystem/path.hpp>
 #include "leveldbwrapper.h"
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //CRAVE_CSPORKDB_H
+#endif //BANDERA_CSPORKDB_H

@@ -1,39 +1,39 @@
-Crave
+Bandera
 =====================
 
 Setup
 ---------------------
-[Crave](http://craveproject.net/wallet) is the original Crave client and it builds the backbone of the network. However, it downloads and stores the entire history of Crave transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[Bandera](http://banderaproject.net/wallet) is the original Bandera client and it builds the backbone of the network. However, it downloads and stores the entire history of Bandera transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Crave on your native platform.
+The following are some helpful notes on how to run Bandera on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- bin/32/crave-qt (GUI, 32-bit) or bin/32/craved (headless, 32-bit)
-- bin/64/crave-qt (GUI, 64-bit) or bin/64/craved (headless, 64-bit)
+- bin/32/bandera-qt (GUI, 32-bit) or bin/32/banderad (headless, 32-bit)
+- bin/64/bandera-qt (GUI, 64-bit) or bin/64/banderad (headless, 64-bit)
 
 ### Windows
 
-Unpack the files into a directory, and then run crave-qt.exe.
+Unpack the files into a directory, and then run bandera-qt.exe.
 
 ### OSX
 
-Drag Crave-Qt to your applications folder, and then run Crave-Qt.
+Drag Bandera-Qt to your applications folder, and then run Bandera-Qt.
 
 ### Need Help?
 
-* See the documentation at the [Crave Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
+* See the documentation at the [Bandera Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [Crave Forum](http://forum.craveproject.net/).
-* Join one of our Slack groups [Crave Slack Groups](https://craveproject.net/slack-logins/).
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [Bandera Forum](http://forum.banderaproject.net/).
+* Join one of our Slack groups [Bandera Slack Groups](https://banderaproject.net/slack-logins/).
 
 Building
 ---------------------
-The following are developer notes on how to build Crave on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Bandera on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OSX Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -41,7 +41,7 @@ The following are developer notes on how to build Crave on your native platform.
 
 Development
 ---------------------
-The Crave repo's [root README](https://github.com/CooleRRSA/crave-ng/blob/master/README.md) contains relevant information on the development process and automated testing.
+The Bandera repo's [root README](https://github.com/2ovob4ehko/bandera-coin/blob/master/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Multiwallet Qt Development](multiwallet-qt.md)
@@ -55,8 +55,8 @@ The Crave repo's [root README](https://github.com/CooleRRSA/crave-ng/blob/master
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [Crave](http://forum.craveproject.net/) forum.
-* Join the [Crave-Dev](https://crave-dev.slack.com/) Slack group ([Sign-Up](https://crave-dev.herokuapp.com/)).
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [Bandera](http://forum.banderaproject.net/) forum.
+* Join the [Bandera-Dev](https://bandera-dev.slack.com/) Slack group ([Sign-Up](https://bandera-dev.herokuapp.com/)).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

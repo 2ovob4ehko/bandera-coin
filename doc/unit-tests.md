@@ -6,13 +6,13 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with 'make check'.
 
-To run the craved tests manually, launch src/test/test_crave .
+To run the banderad tests manually, launch src/test/test_bandera .
 
-To add more craved tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
+To add more banderad tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the test/ directory or add new .cpp files that
 implement new BOOST_AUTO_TEST_SUITE sections.
 
-To run the crave-qt tests manually, launch src/qt/test/crave-qt_test
+To run the bandera-qt tests manually, launch src/qt/test/bandera-qt_test
 
-To add more crave-qt tests, add them to the `src/qt/test/` directory and
+To add more bandera-qt tests, add them to the `src/qt/test/` directory and
 the `src/qt/test/test_main.cpp` file.

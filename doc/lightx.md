@@ -12,8 +12,8 @@ When a "Transaction Lock" occurs the hash of the related transaction is broadcas
 * `zmqpubhashtxlock`: publishes the transaction hash when locked via LightX
 
 This mechanism has been integrated into Bitcore-Node-PHore which allows for notification to be broadcast through Insight API in one of two ways:
-* WebSocket: [https://github.com/Crave-Project/insight-api-crave#web-socket-api](https://github.com/Crave-Project/insight-api-crave#web-socket-api) 
-* API: [https://github.com/Crave-Project/insight-api-crave#lightx-transactions](https://github.com/Crave-Project/insight-api-crave#lightx-transactions) 
+* WebSocket: [https://github.com/Bandera-Project/insight-api-bandera#web-socket-api](https://github.com/Bandera-Project/insight-api-bandera#web-socket-api) 
+* API: [https://github.com/Bandera-Project/insight-api-bandera#lightx-transactions](https://github.com/Bandera-Project/insight-api-bandera#lightx-transactions) 
 
 ####Command line option
 
@@ -27,13 +27,13 @@ When a wallet LightX transaction is successfully locked a shell command provided
 
 Details pertaining to an observed "Transaction Lock" can also be retrieved through RPC, it’s important however to understand the underlying mechanism.
 
-By default, the Crave daemon will launch using the following constant:
+By default, the Bandera daemon will launch using the following constant:
 
 ```
 static const int DEFAULT_LIGHTX_DEPTH = 5;
 ```
 
-This value can be overridden by passing the following argument to the Crave daemon:
+This value can be overridden by passing the following argument to the Bandera daemon:
 
 ```
 -lightxdepth=<n>

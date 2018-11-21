@@ -2,20 +2,20 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "zcravecontroldialog.h"
-#include "ui_zcravecontroldialog.h"
+#include "zbanderacontroldialog.h"
+#include "ui_zbanderacontroldialog.h"
 
 #include "main.h"
 #include "walletmodel.h"
 
 using namespace std;
 
-std::list<std::string> ZCraveControlDialog::listSelectedMints;
-std::list<CZerocoinMint> ZCraveControlDialog::listMints;
+std::list<std::string> ZBanderaControlDialog::listSelectedMints;
+std::list<CZerocoinMint> ZBanderaControlDialog::listMints;
 
-ZCraveControlDialog::ZCraveControlDialog(QWidget *parent) :
+ZBanderaControlDialog::ZBanderaControlDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::ZCraveControlDialog),
+    ui(new Ui::ZBanderaControlDialog),
     model(0)
 {
     ui->setupUi(this);
@@ -29,19 +29,19 @@ ZCraveControlDialog::ZCraveControlDialog(QWidget *parent) :
     connect(ui->pushButtonAll, SIGNAL(clicked()), this, SLOT(ButtonAllClicked()));
 }
 
-ZCraveControlDialog::~ZCraveControlDialog()
+ZBanderaControlDialog::~ZBanderaControlDialog()
 {
     delete ui;
 }
 
-void ZCraveControlDialog::setModel(WalletModel *model)
+void ZBanderaControlDialog::setModel(WalletModel *model)
 {
     this->model = model;
     updateList();
 }
 
 //Update the tree widget
-void ZCraveControlDialog::updateList()
+void ZBanderaControlDialog::updateList()
 {
     // need to prevent the slot from being called each time something is changed
     ui->treeWidget->blockSignals(true);
@@ -130,7 +130,7 @@ void ZCraveControlDialog::updateList()
 }
 
 // Update the list when a checkbox is clicked
-void ZCraveControlDialog::updateSelection(QTreeWidgetItem* item, int column)
+void ZBanderaControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 {
     // only want updates from non top level items that are available to spend
     if (item->parent() && column == COLUMN_CHECKBOX && !item->isDisabled()){
@@ -153,7 +153,7 @@ void ZCraveControlDialog::updateSelection(QTreeWidgetItem* item, int column)
 }
 
 // Update the Quantity and Amount display
-void ZCraveControlDialog::updateLabels()
+void ZBanderaControlDialog::updateLabels()
 {
     int64_t nAmount = 0;
     for (const CZerocoinMint mint : listMints) {
@@ -163,14 +163,14 @@ void ZCraveControlDialog::updateLabels()
     }
 
     //update this dialog's labels
-    ui->labelZCrave_int->setText(QString::number(nAmount));
+    ui->labelZBandera_int->setText(QString::number(nAmount));
     ui->labelQuantity_int->setText(QString::number(listSelectedMints.size()));
 
     //update PrivacyDialog labels
-    privacyDialog->setZCraveControlLabels(nAmount, listSelectedMints.size());
+    privacyDialog->setZBanderaControlLabels(nAmount, listSelectedMints.size());
 }
 
-std::vector<CZerocoinMint> ZCraveControlDialog::GetSelectedMints()
+std::vector<CZerocoinMint> ZBanderaControlDialog::GetSelectedMints()
 {
     std::vector<CZerocoinMint> listReturn;
     for (const CZerocoinMint mint : listMints) {
@@ -183,7 +183,7 @@ std::vector<CZerocoinMint> ZCraveControlDialog::GetSelectedMints()
 }
 
 // select or deselect all of the mints
-void ZCraveControlDialog::ButtonAllClicked()
+void ZBanderaControlDialog::ButtonAllClicked()
 {
     ui->treeWidget->blockSignals(true);
     Qt::CheckState state = Qt::Checked;

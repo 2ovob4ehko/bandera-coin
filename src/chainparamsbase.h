@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between crave-cli and craved)
- * of a given instance of the Crave system.
+ * CBaseChainParams defines the base parameters (shared between bandera-cli and banderad)
+ * of a given instance of the Bandera system.
  */
 class CBaseChainParams
 {

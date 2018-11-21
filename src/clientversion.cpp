@@ -10,10 +10,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both craved and crave-qt, to make it harder for attackers to
+ * for both banderad and bandera-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Crave");
+const std::string CLIENT_NAME("Bandera");
 
 /**
  * Client version number

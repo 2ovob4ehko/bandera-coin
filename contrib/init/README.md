@@ -1,10 +1,10 @@
 Sample configuration files for:
 
-SystemD: craved.service
-Upstart: craved.conf
-OpenRC:  craved.openrc
-         craved.openrcconf
-CentOS:  craved.init
+SystemD: banderad.service
+Upstart: banderad.conf
+OpenRC:  banderad.openrc
+         banderad.openrcconf
+CentOS:  banderad.init
 
 have been made available to assist packagers in creating node packages here.
 

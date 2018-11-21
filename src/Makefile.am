@@ -66,15 +66,15 @@ bin_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += craved
+  bin_PROGRAMS += banderad
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += crave-cli crave-tx
+  bin_PROGRAMS += bandera-cli bandera-tx
 endif
 
 .PHONY: FORCE
-# crave core #
+# bandera core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   accumulators.h \
@@ -190,7 +190,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between craved and crave-qt
+# server: shared between banderad and bandera-qt
 libbitcoin_server_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_SOURCES = \
   addrman.cpp \
@@ -236,7 +236,7 @@ libbitcoin_zmq_a_SOURCES = \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between craved and crave-qt, but only linked
+# wallet: shared between banderad and bandera-qt, but only linked
 # when wallet enabled
 
 libbitcoin_wallet_a_CFLAGS = -fPIC
@@ -332,7 +332,7 @@ libzerocoin_libbitcoin_zerocoin_a_SOURCES = \
   libzerocoin/Params.cpp \
   libzerocoin/SerialNumberSignatureOfKnowledge.cpp
 
-# common: shared between craved, and crave-qt and non-server tools
+# common: shared between banderad, and bandera-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_common_a_SOURCES = \
   accumulators.cpp \
@@ -392,7 +392,7 @@ libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 libbitcoin_util_a_SOURCES += compat/glibcxx_compat.cpp
 endif
 
-# cli: shared between crave-cli and crave-qt
+# cli: shared between bandera-cli and bandera-qt
 libbitcoin_cli_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_SOURCES = \
   rpcclient.cpp \
@@ -402,7 +402,7 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-craved_LDADD = \
+banderad_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UNIVALUE) \
@@ -414,26 +414,26 @@ craved_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-craved_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+banderad_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-craved_LDADD += libbitcoin_wallet.a
+banderad_LDADD += libbitcoin_wallet.a
 endif
-craved_SOURCES = craved.cpp
+banderad_SOURCES = banderad.cpp
 #
 
 if TARGET_WINDOWS
-craved_SOURCES += craved-res.rc
+banderad_SOURCES += banderad-res.rc
 endif
 
-craved_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-craved_CPPFLAGS = $(BITCOIN_INCLUDES)
-craved_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+banderad_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+banderad_CPPFLAGS = $(BITCOIN_INCLUDES)
+banderad_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 
-# crave-cli binary #
-crave_cli_LDADD = \
+# bandera-cli binary #
+bandera_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBBITCOIN_UTIL) \
   $(BOOST_LIBS) \
@@ -441,14 +441,14 @@ crave_cli_LDADD = \
   $(CRYPTO_LIBS) \
   $(EVENT_LIBS)
 
-crave_cli_SOURCES = \
-  crave-cli.cpp
+bandera_cli_SOURCES = \
+  bandera-cli.cpp
 
-crave_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+bandera_cli_CPPFLAGS = $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 #
 
-# crave-tx binary #
-crave_tx_LDADD = \
+# bandera-tx binary #
+bandera_tx_LDADD = \
   $(LIBBITCOIN_UNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -458,15 +458,15 @@ crave_tx_LDADD = \
   $(BOOST_LIBS) \
   $(CRYPTO_LIBS)
 
-crave_tx_SOURCES = crave-tx.cpp
-crave_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
+bandera_tx_SOURCES = bandera-tx.cpp
+bandera_tx_CPPFLAGS = $(BITCOIN_INCLUDES)
 #
-crave_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+bandera_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-crave_cli_SOURCES += crave-cli-res.rc
+bandera_cli_SOURCES += bandera-cli-res.rc
 endif
-crave_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+bandera_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if BUILD_BITCOIN_LIBS
 include_HEADERS = script/bitcoinconsensus.h

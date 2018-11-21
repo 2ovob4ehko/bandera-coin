@@ -346,7 +346,7 @@ void AddressTableModel::updateEntry(const QString& address,
     const QString& purpose,
     int status)
 {
-    // Update address book model from Crave
+    // Update address book model from Bandera
     priv->updateEntry(address, label, isMine, purpose, status);
 }
 

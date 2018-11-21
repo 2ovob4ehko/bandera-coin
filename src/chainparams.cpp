@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2018 The Crave developers
+// Copyright (c) 2017-2018 The Bandera developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -114,8 +114,8 @@ public:
         nRejectBlockOutdatedMajority = 1007;
         nToCheckBlockUpgradeMajority = 1008;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Crave: 1 day
-        nTargetSpacing = 1 * 60;  // Crave: 1 minute
+        nTargetTimespan = 1 * 60; // Bandera: 1 day
+        nTargetSpacing = 1 * 60;  // Bandera: 1 minute
         nMaturity = 87;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 1000000000 * COIN;
@@ -159,16 +159,16 @@ public:
         assert(hashGenesisBlock == uint256("0x7084c9af2c34a1179522d71ceaef27d87855365793ed9c9dd47ff4f8721462c1"));
         assert(genesis.hashMerkleRoot == uint256("0xb9c9cf09c633aa24f4e52766d6decfc20a50063a2210939ef318aefcf925e444"));
 
-        vSeeds.push_back(CDNSSeedData("0", "dns0.craveproject.net"));
-        vSeeds.push_back(CDNSSeedData("1", "dns1.craveproject.net"));
-        vSeeds.push_back(CDNSSeedData("2", "dns2.craveproject.net"));
-        vSeeds.push_back(CDNSSeedData("3", "dns3.craveproject.net"));
-        vSeeds.push_back(CDNSSeedData("4", "dns4.craveproject.net"));
-        vSeeds.push_back(CDNSSeedData("5", "dns5.craveproject.net"));
-        vSeeds.push_back(CDNSSeedData("6", "dns6.craveproject.net"));
-        vSeeds.push_back(CDNSSeedData("7", "dns7.craveproject.net"));
-        vSeeds.push_back(CDNSSeedData("8", "dns8.craveproject.net"));
-        vSeeds.push_back(CDNSSeedData("9", "dns9.craveproject.net"));
+        vSeeds.push_back(CDNSSeedData("0", "dns0.banderaproject.net"));
+        vSeeds.push_back(CDNSSeedData("1", "dns1.banderaproject.net"));
+        vSeeds.push_back(CDNSSeedData("2", "dns2.banderaproject.net"));
+        vSeeds.push_back(CDNSSeedData("3", "dns3.banderaproject.net"));
+        vSeeds.push_back(CDNSSeedData("4", "dns4.banderaproject.net"));
+        vSeeds.push_back(CDNSSeedData("5", "dns5.banderaproject.net"));
+        vSeeds.push_back(CDNSSeedData("6", "dns6.banderaproject.net"));
+        vSeeds.push_back(CDNSSeedData("7", "dns7.banderaproject.net"));
+        vSeeds.push_back(CDNSSeedData("8", "dns8.banderaproject.net"));
+        vSeeds.push_back(CDNSSeedData("9", "dns9.banderaproject.net"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 70);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 85);
@@ -238,8 +238,8 @@ public:
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Crave: 1 day
-        nTargetSpacing = 1 * 60;  // Crave: 1 minute
+        nTargetTimespan = 1 * 60; // Bandera: 1 day
+        nTargetSpacing = 1 * 60;  // Bandera: 1 minute
         nLastPOWBlock = 200;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
@@ -257,14 +257,14 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 127); // Testnet crave addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 196);  // Testnet crave script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 127); // Testnet bandera addresses start with 'x' or 'y'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 196);  // Testnet bandera script addresses start with '8' or '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-        // Testnet crave BIP32 pubkeys start with 'DRKV'
+        // Testnet bandera BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet crave BIP32 prvkeys start with 'DRKP'
+        // Testnet bandera BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Testnet crave BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet bandera BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x01)(0x00)(0x00)(0x80).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
@@ -311,8 +311,8 @@ public:
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Crave: 1 day
-        nTargetSpacing = 1 * 60;        // Crave: 1 minutes
+        nTargetTimespan = 24 * 60 * 60; // Bandera: 1 day
+        nTargetSpacing = 1 * 60;        // Bandera: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         //genesis.nTime = 1505224800;
         //genesis.nBits = 0x1f00ffff;

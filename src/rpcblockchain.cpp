@@ -124,12 +124,12 @@ Object blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool txDe
 
     result.push_back(Pair("moneysupply",ValueFromAmount(blockindex->nMoneySupply)));
 
-    Object zcraveObj;
+    Object zbanderaObj;
     for (auto denom : libzerocoin::zerocoinDenomList) {
-        zcraveObj.push_back(Pair(to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
+        zbanderaObj.push_back(Pair(to_string(denom), ValueFromAmount(blockindex->mapZerocoinSupply.at(denom) * (denom*COIN))));
     }
-    zcraveObj.emplace_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
-    result.emplace_back(Pair("zCRAVEsupply", zcraveObj));
+    zbanderaObj.emplace_back(Pair("total", ValueFromAmount(blockindex->GetZerocoinSupply())));
+    result.emplace_back(Pair("zBANDERAsupply", zbanderaObj));
 
     return result;
 }
@@ -209,7 +209,7 @@ Value getrawmempool(const Array& params, bool fHelp)
             "{                           (json object)\n"
             "  \"transactionid\" : {       (json object)\n"
             "    \"size\" : n,             (numeric) transaction size in bytes\n"
-            "    \"fee\" : n,              (numeric) transaction fee in crave\n"
+            "    \"fee\" : n,              (numeric) transaction fee in bandera\n"
             "    \"time\" : n,             (numeric) local time transaction entered pool in seconds since 1 Jan 1970 GMT\n"
             "    \"height\" : n,           (numeric) block height when transaction entered pool\n"
             "    \"startingpriority\" : n, (numeric) priority when transaction entered pool\n"
@@ -312,17 +312,17 @@ Value getblock(const Array& params, bool fHelp)
             "  \"previousblockhash\" : \"hash\",  (string) The hash of the previous block\n"
             "  \"nextblockhash\" : \"hash\"       (string) The hash of the next block\n"
             "  \"moneysupply\" : \"supply\"       (numeric) The money supply when this block was added to the blockchain\n"
-            "  \"zCRAVEsupply\" :\n"
+            "  \"zBANDERAsupply\" :\n"
             "  {\n"
-            "     \"1\" : n,            (numeric) supply of 1 zCRAVE denomination\n"
-            "     \"5\" : n,            (numeric) supply of 5 zCRAVE denomination\n"
-            "     \"10\" : n,           (numeric) supply of 10 zCRAVE denomination\n"
-            "     \"50\" : n,           (numeric) supply of 50 zCRAVE denomination\n"
-            "     \"100\" : n,          (numeric) supply of 100 zCRAVE denomination\n"
-            "     \"500\" : n,          (numeric) supply of 500 zCRAVE denomination\n"
-            "     \"1000\" : n,         (numeric) supply of 1000 zCRAVE denomination\n"
-            "     \"5000\" : n,         (numeric) supply of 5000 zCRAVE denomination\n"
-            "     \"total\" : n,        (numeric) The total supply of all zCRAVE denominations\n"
+            "     \"1\" : n,            (numeric) supply of 1 zBANDERA denomination\n"
+            "     \"5\" : n,            (numeric) supply of 5 zBANDERA denomination\n"
+            "     \"10\" : n,           (numeric) supply of 10 zBANDERA denomination\n"
+            "     \"50\" : n,           (numeric) supply of 50 zBANDERA denomination\n"
+            "     \"100\" : n,          (numeric) supply of 100 zBANDERA denomination\n"
+            "     \"500\" : n,          (numeric) supply of 500 zBANDERA denomination\n"
+            "     \"1000\" : n,         (numeric) supply of 1000 zBANDERA denomination\n"
+            "     \"5000\" : n,         (numeric) supply of 5000 zBANDERA denomination\n"
+            "     \"total\" : n,        (numeric) The total supply of all zBANDERA denominations\n"
             "  }\n"
             "}\n"
             "\nResult (for verbose=false):\n"
@@ -462,8 +462,8 @@ Value gettxout(const Array& params, bool fHelp)
             "     \"hex\" : \"hex\",        (string) \n"
             "     \"reqSigs\" : n,          (numeric) Number of required signatures\n"
             "     \"type\" : \"pubkeyhash\", (string) The type, eg pubkeyhash\n"
-            "     \"addresses\" : [          (array of string) array of crave addresses\n"
-            "     \"craveaddress\"   	 	(string) crave address\n"
+            "     \"addresses\" : [          (array of string) array of bandera addresses\n"
+            "     \"banderaaddress\"   	 	(string) bandera address\n"
             "        ,...\n"
             "     ]\n"
             "  },\n"

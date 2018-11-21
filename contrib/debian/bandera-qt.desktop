@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Bandera
+Comment=Bandera P2P Cryptocurrency
+Comment[fr]=Bandera, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Bandera, eşten eşe kriptografik sanal para birimi
+Exec=bandera-qt %u
+Terminal=false
+Type=Application
+Icon=bandera128
+MimeType=x-scheme-handler/bandera;
+Categories=Office;Finance;
